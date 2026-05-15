@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nimbus – Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="app-logo">🌤</div>
+    <h1>Nim<span>bus</span></h1>
+    <p>Real-time weather, beautifully presented</p>
+  </header>
+
+  <!-- SEARCH -->
+  <div class="search-wrap">
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Search city (e.g., Pune, Mumbai, Delhi...)" />
+      <button class="loc-btn" id="locBtn" title="Use my location">📍</button>
+      <button class="search-btn" id="searchBtn">Search</button>
+    </div>
+  </div>
+
+  <div class="error-msg" id="errMsg"></div>
+
+  <!-- LOADER -->
+  <div class="loader" id="loader">
+    <div class="spinner"></div>
+    <p>Fetching weather data...</p>
+  </div>
+
+  <!-- WEATHER OUTPUT -->
+  <div class="main-weather" id="mainWeather">
+
+    <div class="hero-card">
+      <div class="location-row">
+        <span>📍</span>
+        <span class="city-name" id="cityName">—</span>
+        <span class="country-name" id="countryName"></span>
+      </div>
+      <div class="date-time" id="dateTime"></div>
+
+      <div class="main-row">
+        <div class="temp-block">
+          <div class="big-temp"><span id="tempVal">—</span>°C</div>
+          <div class="feels-like">Feels like <span id="feelsLike">—</span>°C</div>
+        </div>
+        <div class="icon-block">
+          <div class="weather-icon" id="weatherIcon">—</div>
+          <div class="weather-desc" id="weatherDesc"></div>
+        </div>
+      </div>
+
+      <div class="details-grid">
+        <div class="detail-item"><span class="di">💧</span><div><div class="dl">Humidity</div><div class="dv" id="humidity">—</div></div></div>
+        <div class="detail-item"><span class="di">💨</span><div><div class="dl">Wind Speed</div><div class="dv" id="windSpeed">—</div></div></div>
+        <div class="detail-item"><span class="di">👁️</span><div><div class="dl">Visibility</div><div class="dv" id="visibility">—</div></div></div>
+        <div class="detail-item"><span class="di">🌡️</span><div><div class="dl">UV Index</div><div class="dv" id="uvIndex">—</div></div></div>
+        <div class="detail-item"><span class="di">🌅</span><div><div class="dl">Sunrise</div><div class="dv" id="sunrise">—</div></div></div>
+        <div class="detail-item"><span class="di">🌇</span><div><div class="dl">Sunset</div><div class="dv" id="sunset">—</div></div></div>
+      </div>
+    </div>
+
+    <!-- 7-DAY FORECAST -->
+    <div class="forecast-card">
+      <div class="card-title">📅 7-Day Forecast</div>
+      <div class="forecast-row" id="forecastRow"></div>
+    </div>
+
+    <!-- PRECIPITATION -->
+    <div class="precip-card">
+      <div class="card-title">🌧 Rain Probability Today</div>
+      <div class="precip-main">
+        <span class="precip-icon">🌧️</span>
+        <div>
+          <div class="precip-val" id="precipVal">—</div>
+          <div class="precip-sub">Chance of Rain</div>
+        </div>
+      </div>
+      <div class="precip-bar-wrap"><div class="precip-bar-fill" id="precipBar"></div></div>
+      <div class="precip-labels"><span>Dry</span><span>Moderate</span><span>Heavy</span></div>
+    </div>
+
+  </div>
+
+  <!-- WELCOME STATE -->
+  <div class="welcome" id="welcomeBox">
+    <span class="globe">🌍</span>
+    <h2>Check the Weather</h2>
+    <p>Search any city or tap 📍 to use your current location.</p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
